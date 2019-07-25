@@ -18,7 +18,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var subtitleLabel: NSTextField!
     @IBOutlet weak var imageView: NSImageView!
-    @IBOutlet weak var altTextLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +74,8 @@ class ViewController: NSViewController {
     private func showComic(comic: XkcdComic) {
         self.titleLabel.stringValue = comic.title
         self.subtitleLabel.stringValue = comic.subtitle
-        self.altTextLabel.stringValue = comic.alt
         self.imageView.image = NSImage(contentsOf: URL(string: comic.img)!)
+        imageView.toolTip = comic.alt
     }
     
     private func showError(error: Error) {

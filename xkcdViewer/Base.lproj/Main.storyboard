@@ -235,17 +235,9 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q08-Nf-aHQ">
-                                <rect key="frame" x="17" y="71" width="716" height="555"/>
+                                <rect key="frame" x="17" y="58" width="716" height="568"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="jve-Ic-M6M"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yyK-Af-oDs">
-                                <rect key="frame" x="18" y="49" width="714" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="cEK-v7-Qaj">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-v7-haZ">
                                 <rect key="frame" x="85" y="13" width="116" height="32"/>
                                 <constraints>
@@ -261,19 +253,17 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="yyK-Af-oDs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="2F5-73-eIf"/>
                             <constraint firstItem="q08-Nf-aHQ" firstAttribute="top" secondItem="dY8-A8-B5v" secondAttribute="bottom" constant="8" id="3ai-OE-8Lu"/>
                             <constraint firstItem="dY8-A8-B5v" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ClS-jy-ic5"/>
                             <constraint firstAttribute="trailing" secondItem="dY8-A8-B5v" secondAttribute="trailing" constant="20" id="EYo-O3-WS7"/>
-                            <constraint firstAttribute="trailing" secondItem="yyK-Af-oDs" secondAttribute="trailing" constant="20" id="HEB-ny-QfT"/>
                             <constraint firstItem="ENM-pP-MA9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Jmv-ez-Uk4"/>
                             <constraint firstItem="QkI-mC-ytF" firstAttribute="leading" secondItem="d61-F1-8VP" secondAttribute="trailing" constant="12" id="KKO-7R-U0n"/>
                             <constraint firstItem="E3R-Ne-khq" firstAttribute="baseline" secondItem="QkI-mC-ytF" secondAttribute="baseline" id="Loh-cv-hcE"/>
-                            <constraint firstItem="yyK-Af-oDs" firstAttribute="top" secondItem="q08-Nf-aHQ" secondAttribute="bottom" constant="8" id="No6-rP-3jw"/>
                             <constraint firstItem="eWR-v7-haZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OgX-V5-wHK"/>
                             <constraint firstItem="ENM-pP-MA9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="S2o-gg-s0O"/>
                             <constraint firstAttribute="bottom" secondItem="d61-F1-8VP" secondAttribute="bottom" constant="20" id="UtZ-gf-abz"/>
                             <constraint firstAttribute="trailing" secondItem="ENM-pP-MA9" secondAttribute="trailing" constant="20" id="WCG-wA-gd6"/>
+                            <constraint firstItem="d61-F1-8VP" firstAttribute="top" secondItem="q08-Nf-aHQ" secondAttribute="bottom" constant="20" id="Wu0-uv-DfY"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zci-U1-40h" secondAttribute="trailing" constant="20" symbolic="YES" id="bow-oC-OC6"/>
                             <constraint firstItem="eWR-v7-haZ" firstAttribute="baseline" secondItem="E3R-Ne-khq" secondAttribute="baseline" id="cAg-1T-RCk"/>
                             <constraint firstItem="d61-F1-8VP" firstAttribute="leading" secondItem="E3R-Ne-khq" secondAttribute="trailing" constant="12" id="fDc-5r-uBL"/>
@@ -285,11 +275,9 @@
                             <constraint firstItem="E3R-Ne-khq" firstAttribute="baseline" secondItem="d61-F1-8VP" secondAttribute="baseline" id="uAr-MG-pwe"/>
                             <constraint firstItem="E3R-Ne-khq" firstAttribute="baseline" secondItem="Zci-U1-40h" secondAttribute="baseline" id="xMl-LR-WVJ"/>
                             <constraint firstAttribute="trailing" secondItem="q08-Nf-aHQ" secondAttribute="trailing" constant="20" id="z2k-b5-Yze"/>
-                            <constraint firstItem="d61-F1-8VP" firstAttribute="top" secondItem="yyK-Af-oDs" secondAttribute="bottom" constant="8" id="zEV-6y-DdK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="altTextLabel" destination="yyK-Af-oDs" id="iI6-oO-kj0"/>
                         <outlet property="imageView" destination="q08-Nf-aHQ" id="stL-di-ZLI"/>
                         <outlet property="subtitleLabel" destination="dY8-A8-B5v" id="CDr-mF-wFD"/>
                         <outlet property="titleLabel" destination="ENM-pP-MA9" id="J7n-cc-2kY"/>
@@ -297,7 +285,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="-591"/>
+            <point key="canvasLocation" x="518" y="-544.5"/>
         </scene>
     </scenes>
 </document>
