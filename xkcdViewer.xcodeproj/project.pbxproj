@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51183CF522EC78FB00F4D170 /* GetImageNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51183CF422EC78FB00F4D170 /* GetImageNumberViewController.swift */; };
 		519B450A22EA24A600C524C5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 519B450922EA24A600C524C5 /* Credits.rtf */; };
 		F8F3419B0164F5EBB782CE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3490935CB9832731F84FA /* AppDelegate.swift */; };
 		F8F341F449BCEF4DDD06EC40 /* xkcdViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3448F3A74CC9EB127F09E /* xkcdViewerTests.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51183CF422EC78FB00F4D170 /* GetImageNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageNumberViewController.swift; sourceTree = "<group>"; };
 		519B450922EA24A600C524C5 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		F8F3400108283FCC704048B3 /* xkcdViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdViewerUITests.swift; sourceTree = "<group>"; };
 		F8F3410122A5914D0D12275B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		F8F34892AF7932A1C77E95C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				51183CF422EC78FB00F4D170 /* GetImageNumberViewController.swift */,
 				F8F34A25C39C4A0156A1ED50 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51183CF522EC78FB00F4D170 /* GetImageNumberViewController.swift in Sources */,
 				F8F3419B0164F5EBB782CE73 /* AppDelegate.swift in Sources */,
 				F8F34313866340FB50E8F73B /* XkcdComic.swift in Sources */,
 				F8F34F729EC7C1A74FCB08AB /* ApiClient.swift in Sources */,

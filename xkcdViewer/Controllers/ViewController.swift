@@ -30,6 +30,28 @@ class ViewController: NSViewController {
         self.fetchComic(num: nil)
     }
 
+    @IBAction func showComicByNumber(_ sender: Any) {
+        let storyboardName = NSStoryboard.Name(stringLiteral: "Main")
+        let storyboard = NSStoryboard(name: storyboardName, bundle: nil)
+
+        let sceneIdentifier = NSStoryboard.SceneIdentifier(stringLiteral: "ShowComicNumber")
+        guard let windowController = storyboard.instantiateController(withIdentifier: sceneIdentifier) as? NSWindowController,
+              let window = windowController.window,
+              let viewController = windowController.contentViewController as? GetImageNumberViewController
+                else { return }
+        viewController.lastComicNumber = lastComicNumber
+        viewController.selectedComicNumber = currentComicNumber
+
+        self.view.window?.beginSheet(window, completionHandler: { (response) in
+            if response == NSApplication.ModalResponse.OK {
+                let newComicNum = viewController.selectedComicNumber
+                if self.currentComicNumber != newComicNum {
+                    self.fetchComic(num: newComicNum)
+                }
+            }
+        })
+    }
+    
     @IBAction func showFirstComic(_ sender: Any) {
         if self.currentComicNumber != 1 {
             self.fetchComic(num: 1)
