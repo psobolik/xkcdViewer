@@ -278,7 +278,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstButton" destination="eWR-v7-haZ" id="1se-dt-8vh"/>
                         <outlet property="imageView" destination="q08-Nf-aHQ" id="stL-di-ZLI"/>
+                        <outlet property="lastButton" destination="Zci-U1-40h" id="cP4-1w-DUa"/>
+                        <outlet property="nextButton" destination="QkI-mC-ytF" id="4Wo-NZ-Xmj"/>
+                        <outlet property="previousButton" destination="E3R-Ne-khq" id="QUu-xB-keR"/>
+                        <outlet property="randomButton" destination="d61-F1-8VP" id="NsN-hy-hdn"/>
                         <outlet property="subtitleLabel" destination="dY8-A8-B5v" id="CDr-mF-wFD"/>
                         <outlet property="titleLabel" destination="ENM-pP-MA9" id="J7n-cc-2kY"/>
                     </connections>

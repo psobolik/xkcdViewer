@@ -19,6 +19,12 @@ class ViewController: NSViewController {
     @IBOutlet weak var subtitleLabel: NSTextField!
     @IBOutlet weak var imageView: NSImageView!
     
+    @IBOutlet weak var firstButton: NSButton!
+    @IBOutlet weak var previousButton: NSButton!
+    @IBOutlet weak var randomButton: NSButton!
+    @IBOutlet weak var nextButton: NSButton!
+    @IBOutlet weak var lastButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchComic(num: nil)
@@ -74,12 +80,24 @@ class ViewController: NSViewController {
         })
     }
 
+    private func adjustButtons() {
+        let notAtFirst = currentComicNumber > 1
+        let notAtLast = currentComicNumber < lastComicNumber
+
+        firstButton.isEnabled = notAtFirst
+        previousButton.isEnabled = notAtFirst
+        randomButton.isEnabled = lastComicNumber > 0
+        nextButton.isEnabled = notAtLast
+        lastButton.isEnabled = notAtLast
+    }
+
     private func showComic(comic: XkcdComic) {
         titleLabel.stringValue = comic.title
         subtitleLabel.stringValue = comic.subtitle
         let url = URL(string: comic.img)
         imageView.image = url == nil ? nil : NSImage(contentsOf: URL(string: comic.img)!)
         imageView.toolTip = comic.alt
+        adjustButtons()
     }
 
     private func showError(messageText: String) {
