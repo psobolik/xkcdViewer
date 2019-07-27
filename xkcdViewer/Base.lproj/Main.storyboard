@@ -38,25 +38,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="249" height="103"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-YZ-DLd">
-                                <rect key="frame" x="18" y="64" width="99" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-YZ-DLd">
+                                <rect key="frame" x="18" y="66" width="99" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Comic Number:" id="4Kw-b7-sHP">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-w7-fRi">
-                                <rect key="frame" x="213" y="58" width="19" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-w7-fRi">
+                                <rect key="frame" x="213" y="59" width="19" height="26"/>
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="100" doubleValue="1" id="Jq1-mg-JeH"/>
                                 <connections>
                                     <action selector="onComicNumberStep:" target="sPE-aC-Stb" id="cP8-Jy-Ek9"/>
                                 </connections>
                             </stepper>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y96-yv-71M">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y96-yv-71M">
                                 <rect key="frame" x="161" y="13" width="74" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Show" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bZM-WA-qFF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -68,9 +66,11 @@ DQ
                                     <action selector="showComicNumber:" target="sPE-aC-Stb" id="Qv0-BO-neI"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lda-lx-gAH">
-                                <rect key="frame" x="123" y="61" width="96" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lda-lx-gAH">
+                                <rect key="frame" x="123" y="61" width="94" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="FFo-Fp-6YP"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="FMT-df-Uah">
                                     <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="####0" numberStyle="decimal" allowsFloats="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="a6f-wX-1hT">
                                         <real key="minimum" value="1"/>
@@ -86,9 +86,8 @@ DQ
                                     <action selector="onComicNumberChanged:" target="sPE-aC-Stb" id="2RT-vD-Bgz"/>
                                 </connections>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwa-cU-4hB">
-                                <rect key="frame" x="79" y="13" width="82" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwa-cU-4hB">
+                                <rect key="frame" x="77" y="13" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xbE-GP-elN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -102,8 +101,19 @@ Gw
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="lda-lx-gAH" firstAttribute="top" secondItem="q6z-8D-ccA" secondAttribute="top" constant="20" id="9zK-uZ-h1S"/>
+                            <constraint firstItem="kwa-cU-4hB" firstAttribute="top" secondItem="lda-lx-gAH" secondAttribute="bottom" constant="20" id="BeS-Kv-16g"/>
+                            <constraint firstItem="lda-lx-gAH" firstAttribute="leading" secondItem="Slv-YZ-DLd" secondAttribute="trailing" constant="8" symbolic="YES" id="FHv-7k-qsw"/>
+                            <constraint firstAttribute="trailing" secondItem="PdO-w7-fRi" secondAttribute="trailing" constant="20" id="Km0-Sb-raS"/>
+                            <constraint firstItem="y96-yv-71M" firstAttribute="leading" secondItem="kwa-cU-4hB" secondAttribute="trailing" constant="14" id="MJv-s2-xfv"/>
+                            <constraint firstItem="y96-yv-71M" firstAttribute="top" secondItem="PdO-w7-fRi" secondAttribute="bottom" constant="20" id="Q6g-kS-Eoo"/>
                             <constraint firstItem="Slv-YZ-DLd" firstAttribute="leading" secondItem="q6z-8D-ccA" secondAttribute="leading" constant="20" id="W1Y-r6-1nB"/>
                             <constraint firstItem="Slv-YZ-DLd" firstAttribute="top" secondItem="q6z-8D-ccA" secondAttribute="top" constant="20" id="aWb-Y8-mVd"/>
+                            <constraint firstAttribute="trailing" secondItem="y96-yv-71M" secondAttribute="trailing" constant="20" id="bqz-pR-ZCp"/>
+                            <constraint firstItem="lda-lx-gAH" firstAttribute="centerY" secondItem="PdO-w7-fRi" secondAttribute="centerY" id="chC-XU-dhV"/>
+                            <constraint firstItem="kwa-cU-4hB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="q6z-8D-ccA" secondAttribute="leading" constant="20" symbolic="YES" id="jLz-Tc-H0I"/>
+                            <constraint firstAttribute="trailing" secondItem="lda-lx-gAH" secondAttribute="trailing" constant="32" id="uvp-oI-VPJ"/>
+                            <constraint firstItem="PdO-w7-fRi" firstAttribute="top" secondItem="q6z-8D-ccA" secondAttribute="top" constant="20" id="wC3-as-cAV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -169,7 +179,7 @@ Gw
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="Show Comic by Number" id="1Pt-NY-JqY">
+                                        <menuItem title="Show Comic by Number..." id="1Pt-NY-JqY">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="showComicByNumber:" target="Ady-hI-5gd" id="b7m-Q8-bjs"/>

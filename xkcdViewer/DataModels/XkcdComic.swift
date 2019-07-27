@@ -39,7 +39,7 @@ class XkcdComic : Codable {
     }
     var subtitle: String {
         get {
-            return num > 0 && dateString != nil
+            return num > 0 
                     ? "#\(self.num) \(self.dateString)"
                     : ""
         }
