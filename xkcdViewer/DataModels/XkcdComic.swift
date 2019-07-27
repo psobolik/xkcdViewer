@@ -17,6 +17,7 @@ class XkcdComic : Codable {
     var link: String
     var news: String
     var transcript: String
+    var error: String?
 
     var date: Date {
         get {
@@ -38,7 +39,9 @@ class XkcdComic : Codable {
     }
     var subtitle: String {
         get {
-            return "#\(self.num) \(self.dateString)"
+            return num > 0 && dateString != nil
+                    ? "#\(self.num) \(self.dateString)"
+                    : ""
         }
     }
     init() {

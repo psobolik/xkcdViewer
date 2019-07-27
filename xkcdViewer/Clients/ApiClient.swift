@@ -5,7 +5,14 @@
 
 import Foundation
 
-class ApiClient : NSObject, URLSessionDataDelegate {
+class InvalidResponseError: Error {
+    var message: String
+    init(message: String) {
+        self.message = message
+    }
+}
+
+class ApiClient: NSObject, URLSessionDataDelegate {
     typealias Handler = (Result<XkcdComic, Error>) -> Void
 
     private static let mimeType = "application/json"
@@ -44,7 +51,7 @@ class ApiClient : NSObject, URLSessionDataDelegate {
               (200...299).contains(response.statusCode),
               let mimeType = response.mimeType,
               mimeType == ApiClient.mimeType else {
-            completionHandler(.cancel)
+            self.urlSession(session, task: dataTask, didCompleteWithError: InvalidResponseError(message: "Couldn't get comic"))
             return
         }
         completionHandler(.allow)
@@ -59,22 +66,27 @@ class ApiClient : NSObject, URLSessionDataDelegate {
     // Called when the session completes, possibly due to an error
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
 //        print("Complete!")
+        var comic: XkcdComic = XkcdComic()
+        if let error: Error = error {
+            if error is InvalidResponseError {
+                comic.error = (error as! InvalidResponseError).message
+            } else {
+                comic.error = error.localizedDescription
+            }
+        } else if let receivedData = self.receivedData {
+//                let dataString = String(data: receivedData, encoding: .utf8)
+//                print(dataString!)
+            do {
+                let decoder = JSONDecoder()
+                comic = try decoder.decode(XkcdComic.self, from: receivedData)
+            } catch {
+                // This should never happen
+                comic.error = error.localizedDescription
+            }
+        }
         DispatchQueue.main.async {
-            if let error: Error = error {
-                if self.completionHandler != nil {
-                    self.completionHandler!(.failure(error))
-                }
-            } else if let receivedData = self.receivedData {//,
-                      //let json = String(data: receivedData, encoding: .utf8) {
-                if self.completionHandler != nil {
-                    do {
-                        let decoder = JSONDecoder()
-                        let comic = try decoder.decode(XkcdComic.self, from: receivedData)
-                        self.completionHandler!(.success(comic))
-                    } catch {
-                        // What to do?
-                    }
-                }
+            if self.completionHandler != nil {
+                self.completionHandler!(.success(comic))
             }
         }
     }

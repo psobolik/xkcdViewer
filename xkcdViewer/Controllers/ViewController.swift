@@ -49,36 +49,44 @@ class ViewController: NSViewController {
     }
 
     @IBAction func showRandomComic(_ sender: Any) {
-        fetchComic(num: UInt32.random(in: 1 ..< lastComicNumber))
-    }
-
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
+        if lastComicNumber > 0 {
+            fetchComic(num: UInt32.random(in: 1..<lastComicNumber))
         }
     }
-    
+
     func fetchComic(num: UInt32?) {
         apiClient.getComicInfo(comicNumber: num, completionHandler: { [weak self] result in
             switch result {
             case .failure(let error):
-                self!.showError(error: error)
+                self!.showError(messageText: error.localizedDescription)
             case .success(let comic):
-                self!.currentComicNumber = comic.num
-                if num == nil { self!.lastComicNumber = comic.num }
+                if comic.num > 0 {
+                    self!.currentComicNumber = comic.num
+                    if (num == nil) {
+                        self!.lastComicNumber = comic.num
+                    }
+                }
                 self!.showComic(comic: comic)
+                if comic.error != nil {
+                    self!.showError(messageText: comic.error!)
+                }
             }
         })
     }
 
     private func showComic(comic: XkcdComic) {
-        self.titleLabel.stringValue = comic.title
-        self.subtitleLabel.stringValue = comic.subtitle
-        self.imageView.image = NSImage(contentsOf: URL(string: comic.img)!)
+        titleLabel.stringValue = comic.title
+        subtitleLabel.stringValue = comic.subtitle
+        let url = URL(string: comic.img)
+        imageView.image = url == nil ? nil : NSImage(contentsOf: URL(string: comic.img)!)
         imageView.toolTip = comic.alt
     }
-    
-    private func showError(error: Error) {
-        // TODO: Show Error
+
+    private func showError(messageText: String) {
+        let alert: NSAlert = NSAlert()
+        alert.messageText = messageText;
+        alert.alertStyle = .critical
+        alert.addButton(withTitle: "OK")
+        alert.beginSheetModal(for: view.window!)
     }
 }
