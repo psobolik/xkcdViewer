@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-YZ-DLd">
-                                <rect key="frame" x="18" y="66" width="99" height="17"/>
+                                <rect key="frame" x="18" y="67" width="99" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Comic Number:" id="4Kw-b7-sHP">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -47,14 +48,14 @@
                                 </textFieldCell>
                             </textField>
                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-w7-fRi">
-                                <rect key="frame" x="213" y="59" width="19" height="26"/>
+                                <rect key="frame" x="213" y="57" width="19" height="30"/>
                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="100" doubleValue="1" id="Jq1-mg-JeH"/>
                                 <connections>
                                     <action selector="onComicNumberStep:" target="sPE-aC-Stb" id="cP8-Jy-Ek9"/>
                                 </connections>
                             </stepper>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y96-yv-71M">
-                                <rect key="frame" x="161" y="13" width="74" height="32"/>
+                                <rect key="frame" x="168" y="14" width="68" height="32"/>
                                 <buttonCell key="cell" type="push" title="Show" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bZM-WA-qFF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -87,7 +88,7 @@ DQ
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kwa-cU-4hB">
-                                <rect key="frame" x="77" y="13" width="82" height="32"/>
+                                <rect key="frame" x="92" y="14" width="76" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xbE-GP-elN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -271,11 +272,11 @@ Gw
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="xkcd_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="750" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="750" height="693"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ENM-pP-MA9">
-                                <rect key="frame" x="18" y="656" width="714" height="24"/>
+                                <rect key="frame" x="18" y="649" width="714" height="24"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="vtw-WG-JgK">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -283,105 +284,114 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dY8-A8-B5v">
-                                <rect key="frame" x="18" y="631" width="714" height="17"/>
+                                <rect key="frame" x="18" y="625" width="714" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="VsR-nl-tgc">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d61-F1-8VP">
-                                <rect key="frame" x="317" y="13" width="116" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="zZ2-fy-4u0"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="Random" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zst-lJ-bz7">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showRandomComic:" target="XfG-lQ-9wD" id="50E-rS-4xI"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-Ne-khq">
-                                <rect key="frame" x="201" y="13" width="116" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="4aL-KK-UzD"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="&lt; Previous" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HqX-fw-Vaq">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showPreviousComic:" target="XfG-lQ-9wD" id="q4w-AL-Axg"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zci-U1-40h">
-                                <rect key="frame" x="549" y="13" width="116" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="Gzu-m4-tfd"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="Last &gt;|" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fOb-Eo-4YG">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showLastComic:" target="XfG-lQ-9wD" id="BkG-2f-uxr"/>
-                                </connections>
-                            </button>
-                            <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QkI-mC-ytF">
-                                <rect key="frame" x="433" y="13" width="116" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="5b3-BC-whA"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="Next &gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P3T-zG-eaf">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showNextComic:" target="XfG-lQ-9wD" id="wXG-z4-5B2"/>
-                                </connections>
-                            </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q08-Nf-aHQ">
-                                <rect key="frame" x="17" y="58" width="716" height="568"/>
+                                <rect key="frame" x="17" y="57" width="716" height="563"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="jve-Ic-M6M"/>
                             </imageView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-v7-haZ">
-                                <rect key="frame" x="85" y="13" width="116" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="0Ve-Nb-nbU"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="|&lt; First" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GhC-Sx-T6h">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showFirstComic:" target="XfG-lQ-9wD" id="zro-p8-FHH"/>
-                                </connections>
-                            </button>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40A-Jm-Xra">
+                                <rect key="frame" x="99" y="20" width="552" height="20"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eWR-v7-haZ">
+                                        <rect key="frame" x="-7" y="-7" width="118" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="0Ve-Nb-nbU"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="|&lt; First" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GhC-Sx-T6h">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showFirstComic:" target="XfG-lQ-9wD" id="zro-p8-FHH"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-Ne-khq">
+                                        <rect key="frame" x="105" y="-7" width="118" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="4aL-KK-UzD"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="&lt; Previous" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HqX-fw-Vaq">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showPreviousComic:" target="XfG-lQ-9wD" id="q4w-AL-Axg"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d61-F1-8VP">
+                                        <rect key="frame" x="217" y="-7" width="118" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="zZ2-fy-4u0"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Random" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zst-lJ-bz7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showRandomComic:" target="XfG-lQ-9wD" id="50E-rS-4xI"/>
+                                        </connections>
+                                    </button>
+                                    <button horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QkI-mC-ytF">
+                                        <rect key="frame" x="329" y="-7" width="118" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="5b3-BC-whA"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Next &gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P3T-zG-eaf">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showNextComic:" target="XfG-lQ-9wD" id="wXG-z4-5B2"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zci-U1-40h">
+                                        <rect key="frame" x="441" y="-7" width="118" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="Gzu-m4-tfd"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Last &gt;|" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fOb-Eo-4YG">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showLastComic:" target="XfG-lQ-9wD" id="BkG-2f-uxr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="q08-Nf-aHQ" firstAttribute="top" secondItem="dY8-A8-B5v" secondAttribute="bottom" constant="8" id="3ai-OE-8Lu"/>
                             <constraint firstItem="dY8-A8-B5v" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ClS-jy-ic5"/>
                             <constraint firstAttribute="trailing" secondItem="dY8-A8-B5v" secondAttribute="trailing" constant="20" id="EYo-O3-WS7"/>
                             <constraint firstItem="ENM-pP-MA9" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Jmv-ez-Uk4"/>
-                            <constraint firstItem="QkI-mC-ytF" firstAttribute="leading" secondItem="d61-F1-8VP" secondAttribute="trailing" constant="12" id="KKO-7R-U0n"/>
-                            <constraint firstItem="E3R-Ne-khq" firstAttribute="baseline" secondItem="QkI-mC-ytF" secondAttribute="baseline" id="Loh-cv-hcE"/>
-                            <constraint firstItem="eWR-v7-haZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OgX-V5-wHK"/>
                             <constraint firstItem="ENM-pP-MA9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="S2o-gg-s0O"/>
-                            <constraint firstAttribute="bottom" secondItem="d61-F1-8VP" secondAttribute="bottom" constant="20" id="UtZ-gf-abz"/>
+                            <constraint firstItem="40A-Jm-Xra" firstAttribute="top" secondItem="q08-Nf-aHQ" secondAttribute="bottom" constant="20" id="TbO-77-eZJ"/>
                             <constraint firstAttribute="trailing" secondItem="ENM-pP-MA9" secondAttribute="trailing" constant="20" id="WCG-wA-gd6"/>
-                            <constraint firstItem="d61-F1-8VP" firstAttribute="top" secondItem="q08-Nf-aHQ" secondAttribute="bottom" constant="20" id="Wu0-uv-DfY"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zci-U1-40h" secondAttribute="trailing" constant="20" symbolic="YES" id="bow-oC-OC6"/>
-                            <constraint firstItem="eWR-v7-haZ" firstAttribute="baseline" secondItem="E3R-Ne-khq" secondAttribute="baseline" id="cAg-1T-RCk"/>
-                            <constraint firstItem="d61-F1-8VP" firstAttribute="leading" secondItem="E3R-Ne-khq" secondAttribute="trailing" constant="12" id="fDc-5r-uBL"/>
                             <constraint firstItem="q08-Nf-aHQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="gVC-sF-sui"/>
-                            <constraint firstItem="d61-F1-8VP" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="i5n-mZ-ZTY"/>
-                            <constraint firstItem="E3R-Ne-khq" firstAttribute="leading" secondItem="eWR-v7-haZ" secondAttribute="trailing" constant="12" symbolic="YES" id="igr-w9-dYf"/>
+                            <constraint firstItem="40A-Jm-Xra" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jKa-4d-UGj"/>
                             <constraint firstItem="dY8-A8-B5v" firstAttribute="top" secondItem="ENM-pP-MA9" secondAttribute="bottom" constant="8" id="koR-cw-HbX"/>
-                            <constraint firstItem="Zci-U1-40h" firstAttribute="leading" secondItem="QkI-mC-ytF" secondAttribute="trailing" constant="12" id="lH8-GZ-k9e"/>
-                            <constraint firstItem="E3R-Ne-khq" firstAttribute="baseline" secondItem="d61-F1-8VP" secondAttribute="baseline" id="uAr-MG-pwe"/>
-                            <constraint firstItem="E3R-Ne-khq" firstAttribute="baseline" secondItem="Zci-U1-40h" secondAttribute="baseline" id="xMl-LR-WVJ"/>
+                            <constraint firstAttribute="bottom" secondItem="40A-Jm-Xra" secondAttribute="bottom" constant="20" symbolic="YES" id="mOc-JU-Zf0"/>
                             <constraint firstAttribute="trailing" secondItem="q08-Nf-aHQ" secondAttribute="trailing" constant="20" id="z2k-b5-Yze"/>
                         </constraints>
                     </view>
@@ -398,7 +408,7 @@ Gw
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="-544.5"/>
+            <point key="canvasLocation" x="518" y="-548.5"/>
         </scene>
     </scenes>
 </document>
