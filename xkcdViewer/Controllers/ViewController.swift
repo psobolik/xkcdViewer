@@ -11,7 +11,8 @@ import AppKit
 
 class ViewController: NSViewController {
     private let apiClient = ApiClient()
-
+    private let comicClient = ComicClient()
+    
     private var lastComicNumber: UInt32 = 0
     private var currentComicNumber: UInt32 = 0
 
@@ -114,12 +115,19 @@ class ViewController: NSViewController {
     }
 
     private func showComic(comic: XkcdComic) {
-        titleLabel.stringValue = comic.title
-        subtitleLabel.stringValue = comic.subtitle
-        let url = URL(string: comic.img)
-        imageView.image = url == nil ? nil : NSImage(contentsOf: URL(string: comic.img)!)
-        imageView.toolTip = comic.alt
-        adjustButtons()
+        if let url = URL(string: comic.img) {
+            comicClient.getComicImage(url: url, completionHandler: { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    self!.showError(messageText: error.localizedDescription)
+                case .success(let image):
+                    self!.imageView.image = image
+                    self!.titleLabel.stringValue = comic.title
+                    self!.subtitleLabel.stringValue = comic.subtitle
+                    self!.imageView.toolTip = comic.alt
+                }
+            })
+        }
     }
 
     private func showError(messageText: String) {

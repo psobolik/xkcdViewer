@@ -5,13 +5,6 @@
 
 import Foundation
 
-class InvalidResponseError: Error {
-    var message: String
-    init(message: String) {
-        self.message = message
-    }
-}
-
 class ApiClient: NSObject, URLSessionDataDelegate {
     typealias Handler = (Result<XkcdComic, Error>) -> Void
 
@@ -25,7 +18,7 @@ class ApiClient: NSObject, URLSessionDataDelegate {
         return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }()
 
-    private func getComicURL(comicNumber: UInt32?) -> URL {
+    private func getComicInfoURL(comicNumber: UInt32?) -> URL {
         let folder = comicNumber != nil ? "\(comicNumber!)/" : ""
         let urlString = "https://xkcd.com/\(folder)info.0.json"
 //        print("URL String: \(urlString)")
@@ -35,7 +28,7 @@ class ApiClient: NSObject, URLSessionDataDelegate {
     public func getComicInfo(comicNumber: UInt32?, completionHandler: @escaping Handler) {
         self.completionHandler = completionHandler
 
-        let url = getComicURL(comicNumber: comicNumber)
+        let url = getComicInfoURL(comicNumber: comicNumber)
 //        print("URL: \(url)")
         self.receivedData = Data()
         let task = urlSession.dataTask(with: url)
@@ -51,7 +44,7 @@ class ApiClient: NSObject, URLSessionDataDelegate {
               (200...299).contains(response.statusCode),
               let mimeType = response.mimeType,
               mimeType == ApiClient.mimeType else {
-            self.urlSession(session, task: dataTask, didCompleteWithError: InvalidResponseError(message: "Couldn't get comic"))
+            self.urlSession(session, task: dataTask, didCompleteWithError: InvalidResponseError(message: "Couldn't get comic info"))
             return
         }
         completionHandler(.allow)
